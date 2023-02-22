@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body{
+    background: #F0F1F8;
+}
+
+.loading{
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+}
+
+.card{
+    position: absolute;
+    width: 343px;
+    height: 314px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    border-radius: 18px;
+    font-family: 'Montserrat';
+
+    @media (min-width: 820px){
+        width: 372px;
+        height: 322px;
+    }
+
+    &__star{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 16px;
+        top: 16px;
+        background: #F0F1F8;
+        border-radius: 370px;
+
+        @media(min-width:820px){
+            left: 24px;
+            top: 24px;            
+        }
+        &-icon{
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 12px;
+            top: 12px;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            background: #F2B234;
+        }
+    }
+
+    &__xmark{
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 299px;
+        top: 12px;
+
+        @media (min-width: 820px){
+            left: 328px;
+        }
+
+        &-line-one{
+            position: absolute;
+            width: 16px;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            border: 1.5px solid #0D1016;
+            transform: rotate(45deg);
+        }
+
+        &-line-two{
+            position: absolute;
+            width: 16px;
+            top: 50%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+
+            border: 1.5px solid #0D1016;
+            transform: rotate(-45deg)
+        }
+
+    }
+
+    &__title{
+        position: absolute;
+        width: 200px;
+        height: 40px;
+        left: 16px;
+        top: 66px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.03em;
+        color: #0D1016;
+
+        @media(min-width: 820px){
+            width: 265px;
+            height: 40px;
+            left: 24px;
+            top: 74px;
+        }
+    }
+
+    &__numbers{
+        .card__number-one, .card__number-two, .card__number-three, .card__number-four, .card__number-five{
+            box-sizing: border-box;
+            position: absolute;
+            width: 56px;
+            height: 48px;
+            top: 130px;
+            background: #FCFCFF;
+            border: 1px solid #DADFE9;
+            border-radius: 12px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+
+
+            &:hover{
+                background-color: #DADFE9;
+            }
+
+            &.active{
+                background-color: #293CE2;
+            }
+
+            @media(min-width: 820px){
+                width: 60px;
+                height: 48px; 
+                top: 138px;              
+            }
+        }
+        .card__number-one{
+            left: 16px;
+
+            @media(min-width: 820px){
+                left: 24px;
+            }
+        }
+
+        .card__number-two{
+            left: 80px;
+            @media(min-width: 820px){
+                left: 90px;
+            }
+        }
+
+        .card__number-three{
+            left: 144px;
+            @media(min-width: 820px){
+                left: 156px;
+            }
+        }
+
+        .card__number-four{
+            left: 207px;
+            @media(min-width: 820px){
+                left: 222px;
+            }
+        }
+
+        .card__number-five{
+            left: 271px;
+            @media(min-width: 820px){
+                left: 288px;
+            }
+        }
+
+
+    }
+
+    &__number-text{
+        position: absolute;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+        color: #0D1016;
+        .active &{
+            color: white;
+        }
+    }
+
+    &__dissatisfied, &__satisfied{
+        position: absolute;
+        width: 90px;
+        height: 28px;
+        top: 190px;
+        color: #AEB5C3;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 120%;
+        
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.03em;
+
+        @media(min-width: 820px){
+            top: 198px;
+        }
+    }
+
+    &__dissatisfied{
+        left: 16px;
+
+        @media(min-width: 820px){
+            left: 24px;
+        }
+    }
+
+    &__satisfied{
+        left: 237px;
+        text-align: right;
+
+        @media(min-width: 820px){
+            left: 258px;
+        }
+    }
+
+    &__btn{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 17px 40px;
+        gap: 10px;
+
+        position: absolute;
+        width: 311px;
+        height: 48px;
+        left: 16px;
+        top: 242px;
+
+        background: #F0F1F8;
+        border-radius: 12px;
+        border: none;
+        cursor: not-allowed;
+
+        &.active{
+            background-color:#293CE2;
+            cursor: pointer;
+            &:hover{
+                background-color: #4759F4;
+            }
+
+            &:focus{
+                background-color: #2032D0;
+            }
+        }
+
+        @media (min-width: 820px){
+            width: 324px;
+            left: 24px;
+            top: 250px;            
+        }
+
+        &-text{
+            width: 66px;
+            height: 14px;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.03em;
+            color: #FFFFFF;
+            flex: none;  
+            
+        }
+    }
+}
