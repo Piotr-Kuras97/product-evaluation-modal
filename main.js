@@ -13,8 +13,14 @@ const nextStep = document.querySelector(".card__btn")
 let rating;
 let flag = true
 
+
 numberSelect.forEach((item) => {
     item.addEventListener("click", () =>{
+        for (let i = 0; i < numberSelect.length; i++){
+            numberSelect[i].classList.remove("active")
+            flag = !flag
+        }
+
         if (flag){
             item.classList.add("active")
             nextStep.classList.add("active")
